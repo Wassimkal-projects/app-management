@@ -1,0 +1,15 @@
+server:
+  port: 8070
+spring:
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/app-management
+    username: wk-projects
+    password: admin
+

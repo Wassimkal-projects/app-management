@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+<!--    <changeSet id="001" author="wassim">
+        <insert schemaName="public"
+                tableName="genre">
+            <column name="id" valueComputed="NEXTVAL('genre_seq')"/>
+            <column name="code" value="DOCUMENTAIRE"/>
+            <column name="description" value="Documentaire"/>
+            <column name="created_by" value="liquibase"/>
+            <column name="created_date" valueDate="${now}"/>
+        </insert>
+
+        <insert schemaName="public"
+                tableName="movie">
+            <column name="id" valueComputed="NEXTVAL('movie_seq')"/>
+            <column name="title" value="The Great Hack"/>
+            <column name="producer" value="Jehane Noujaim et Karim Amer"/>
+            <column name="release_date" value="2019-01-01"/>
+            <column name="rating" value="4.5"/>
+            <column name="created_by" value="liquibase"/>
+            <column name="created_date" valueDate="${now}"/>
+        </insert>
+        
+        <insert schemaName="public"
+                tableName="genre_movies">
+            <column name="genre_id" valueComputed="(SELECT id FROM genre where code = 'DOCUMENTAIRE')"/>
+            <column name="movie_id" valueComputed="(SELECT id FROM movie where title = 'The Great Hack')"/>
+        </insert>
+    </changeSet>-->
+</databaseChangeLog>

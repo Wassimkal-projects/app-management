@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "ac75d93d-df4f-497a-8c16-863a6918d5f1",
+		"name": "one-to-many",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "application",
+			"item": [
+				{
+					"name": "saveApplication",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"appName\":\"doc-book\",\n\t\"appType\":\"cloud app\",\n\t\"description\":\"annuaire des medecins\",\n\t\"appVersion\": \"1.0 RELEASE\",\n\t\"webUrl\":\"e-facturetunisie.com\",\n\t\"developedBy\":\"Axeane\",\n\t\"isOnProd\":\"false\",\n\t\"modules\":[\n\t\t{\n\t\t\t\"moduleName\":\"annuaire\",\n\t\t\t\"moduleVersion\":\"1.0 SNAPSHOT\",\n\t\t\t\"isActive\":\"true\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/application/saveApplication",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"application",
+								"saveApplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateApp",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"3\",\n\t\"appName\":\"e-facturation\",\n\t\"appType\":\"cloud app\",\n\t\"description\":\"application cloud de gestion commerciale\",\n\t\"appVersion\": \"1.0 RELEASE\",\n\t\"webUrl\":\"e-facturetunisie.com\",\n\t\"developedBy\":\"Axeane\",\n\t\"isOnProd\":\"true\",\n\t\"modules\":[\n\t\t{\n\t\t\t\"moduleName\":\"gestion de stock\",\n\t\t\t\"moduleVersion\":\"1.0 SNAPSHOT\",\n\t\t\t\"isActive\":\"true\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/application/updateApplication",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"application",
+								"updateApplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getApplicationById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"appName\":\"e-facturation\",\n\t\"appType\":\"cloud app\",\n\t\"description\":\"application cloud de gestion commerciale\",\n\t\"version\": \"1.0 RELEASE\",\n\t\"webUrl\":\"e-facturetunisie.com\",\n\t\"developedBy\":\"Axeane\",\n\t\"isOnProd\":\"true\",\n\t\"modules\":[\n\t\t{\n\t\t\t\"moduleName\":\"gestion de stock\",\n\t\t\t\"moduleVersion\":\"1.0 SNAPSHOT\",\n\t\t\t\"isActive\":\"true\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/application/getApplicationById/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"application",
+								"getApplicationById",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllApps",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"appName\":\"e-facturation\",\n\t\"appType\":\"cloud app\",\n\t\"description\":\"application cloud de gestion commerciale\",\n\t\"version\": \"1.0 RELEASE\",\n\t\"webUrl\":\"e-facturetunisie.com\",\n\t\"developedBy\":\"Axeane\",\n\t\"isOnProd\":\"true\",\n\t\"modules\":[\n\t\t{\n\t\t\t\"moduleName\":\"gestion de stock\",\n\t\t\t\"moduleVersion\":\"1.0 SNAPSHOT\",\n\t\t\t\"isActive\":\"true\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/application",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteApplication",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"appName\":\"e-facturation\",\n\t\"appType\":\"cloud app\",\n\t\"description\":\"application cloud de gestion commerciale\",\n\t\"version\": \"1.0 RELEASE\",\n\t\"webUrl\":\"e-facturetunisie.com\",\n\t\"developedBy\":\"Axeane\",\n\t\"isOnProd\":\"true\",\n\t\"modules\":[\n\t\t{\n\t\t\t\"moduleName\":\"gestion de stock\",\n\t\t\t\"moduleVersion\":\"1.0 SNAPSHOT\",\n\t\t\t\"isActive\":\"true\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/application/deleteApplicationById/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"application",
+								"deleteApplicationById",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "module",
+			"item": [
+				{
+					"name": "saveModule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"moduleName\":\"facturation\",\n\t\"moduleVersion\":\"2.0\",\n\t\"isActive\":\"true\",\n\t\"application\": {\n\t\t\"id\":\"1\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/module/saveModule",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"module",
+								"saveModule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateModule",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"22\",\n\t\"moduleName\":\"facturation\",\n\t\"moduleVersion\":\"3.0\",\n\t\"isActive\":\"true\",\n\t\"application\": {\n\t\t\"id\":\"1\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/module/updateModule",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"module",
+								"updateModule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteModule",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"22\",\n\t\"moduleName\":\"facturation\",\n\t\"moduleVersion\":\"3.0\",\n\t\"isActive\":\"true\",\n\t\"application\": {\n\t\t\"id\":\"1\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/module/deleteModuleById/21",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"module",
+								"deleteModuleById",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getModuleById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"22\",\n\t\"moduleName\":\"facturation\",\n\t\"moduleVersion\":\"3.0\",\n\t\"isActive\":\"true\",\n\t\"application\": {\n\t\t\"id\":\"1\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/module/getModuleById/22",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"module",
+								"getModuleById",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getModulesByAppId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"22\",\n\t\"moduleName\":\"facturation\",\n\t\"moduleVersion\":\"3.0\",\n\t\"isActive\":\"true\",\n\t\"application\": {\n\t\t\"id\":\"1\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/module/getAllModulesByApp/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"module",
+								"getAllModulesByApp",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <changeSet id="001" author="wassim">
+
+        <createSequence incrementBy="1"
+                        schemaName="public"
+                        sequenceName="application_seq"
+                        startValue="1"/>
+
+        <createSequence incrementBy="1"
+                        schemaName="public"
+                        sequenceName="module_seq"
+                        startValue="1"/>
+
+        <createTable tableName="application">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="app_name" type="varchar"/>
+            <column name="app_type" type="varchar"/>
+            <column name="description" type="varchar"/>
+            <column name="app_version" type="varchar"/>
+            <column name="web_url" type="varchar"/>
+            <column name="developed_by" type="varchar"/>
+            <column name="is_on_prod" type="boolean"/>
+        </createTable>
+
+        <createTable tableName="module">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="module_name" type="varchar"/>
+            <column name="module_version" type="varchar"/>
+            <column name="is_active" type="boolean"/>
+            <column name="application_id" type="bigint"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="module"
+                                 constraintName="fk_application_module"
+                                 referencedColumnNames="id"
+                                 referencedTableName="application"/>
+    </changeSet>
+</databaseChangeLog>
