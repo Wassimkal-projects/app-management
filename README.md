@@ -24,9 +24,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/onetomany
-    username: wassim
-    password: wassim
+    url: jdbc:postgresql://localhost:5432/app-management
+    username: wk-projects
+    password: admin
  ```
 ## Entités:
 ### Application.java
