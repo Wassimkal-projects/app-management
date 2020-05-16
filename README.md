@@ -12,7 +12,7 @@ Pour générer le projet, on a utilisé spring initializr, comme alternative on 
 Puisque nous utilisons PostgreSQL comme base de données, nous devons configurer l'URL, le nom d'utilisateur et le mot de passe de la base de données afin que Spring puisse établir une connexion avec la base de données au démarrage,
 cette configuration se fait au niveau du fichier properties.yml
 ## Properties.yml:
-```
+```yaml
 server:
   port: 8070
 spring:
@@ -31,7 +31,7 @@ spring:
 ## Entités:
 ### Application.java
 
- ```
+ ```java
  package com.axeane.appmanagement.domain;
  
  
@@ -187,7 +187,7 @@ spring:
   ```
 
 ### Module.java
-```
+```java
 package com.axeane.appmanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -297,7 +297,7 @@ public class Module implements Serializable {
 Ensuite, nous allons définir les repository pour accéder aux données de la base de données:
 
 ### ApplicationRepository.java
-  ```
+  ```java
 package com.axeane.appmanagement.repository;
 
 import com.axeane.Application;
@@ -310,7 +310,7 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
 
   ```
 ### ModuleRepository.java
-  ```
+  ```java
 package com.axeane.appmanagement.repository;
 
 import com.axeane.Module;
@@ -335,7 +335,7 @@ public interface ModuleRepository extends JpaRepository<Module, Long> {
 Toutes les classes de contrôleur suivantes sont définies dans le package com.axeane.appmanagement.resource.
 
 ### ApplicationResource.class
-  ```
+  ```java
   package com.axeane.appmanagement.web.rest;
   
   import com.axeane.Application;
@@ -388,7 +388,7 @@ Toutes les classes de contrôleur suivantes sont définies dans le package com.a
   ```
   
 ### ModuleResource.class
-```
+```java
 package com.axeane.appmanagement.web.rest;
 
 import com.axeane.Module;
@@ -442,7 +442,7 @@ public class ModuleResource {
 
 ## Services: 
 ### ApplicationServiceImpl.class
-```
+```java
 package com.axeane.appmanagement.service.implementation;
 
 import com.axeane.Application;
@@ -521,7 +521,7 @@ public class ApplicationServiceImpl implements IApplicationService {
 
 ```
 ### ModuleServiceImpl.class
-```
+```java
 package com.axeane.appmanagement.service.implementation;
 
 import com.axeane.Application;
@@ -614,7 +614,7 @@ public class ModuleServiceImpl implements IModuleService {
 
 ## Ecrire les test Unitaires:
 ### ApplicationServiceImplTest.class
-```
+```java
 package com.axeane.appmanagement.service.implementation;
 
 import com.axeane.SpringbootOneToManyApplication;
@@ -773,7 +773,7 @@ public class ApplicationServiceImplTest {
 ```
 
 ### ModuleServiceImplTest.class
-```
+```java
 package com.axeane.appmanagement.service.implementation;
 
 import com.axeane.SpringbootOneToManyApplication;
