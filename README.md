@@ -4,10 +4,10 @@ Le but de ce projet est de créer une relation de base de données One to many e
 ## Création du projet: 
 Pour générer le projet, on a utilisé spring initializr, comme alternative on peut installer Spring boot CLI: 
 
-![Image](https://github.com/axeaneProjects/github-wassim/tree/master/src/main/resources/initialzr.JPG)  
+![Image](https://github.com/Wassimkal-projects/app-management/blob/master/src/main/resources/initialzr.JPG)  
 
 ## Structure du projet: 
-![Image](https://github.com/axeaneProjects/github-wassim/blob/master/ocr-service/src/main/resources/architecture.JPG)  
+![Image](https://github.com/Wassimkal-projects/app-management/blob/master/src/main/resources/architecture.JPG)  
 
 Puisque nous utilisons PostgreSQL comme base de données, nous devons configurer l'URL, le nom d'utilisateur et le mot de passe de la base de données afin que Spring puisse établir une connexion avec la base de données au démarrage,
 cette configuration se fait au niveau du fichier properties.yml
@@ -607,10 +607,10 @@ public class ModuleServiceImpl implements IModuleService {
 
 ## Testing with POSTMAN:
 ### Save application: 
-![Image](https://github.com/axeaneProjects/github-wassim/tree/master/src/main/resources/save-app.JPG)  
+![Image](https://github.com/Wassimkal-projects/app-management/blob/master/src/main/resources/save-app.JPG)  
 
 ### GetApplicationById: 
-![Image](https://github.com/axeaneProjects/github-wassim/tree/master/src/main/resources/get-by-id.JPG)  
+![Image](https://github.com/Wassimkal-projects/app-management/blob/master/src/main/resources/get-by-idJPG.JPG)  
 
 ## Ecrire les test Unitaires:
 ### ApplicationServiceImplTest.class
